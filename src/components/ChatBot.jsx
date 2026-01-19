@@ -13,13 +13,19 @@ const ChatBot = ({ onOpenMap }) => {
     const messagesEndRef = useRef(null);
 
     // Auto-open after 2 seconds
+    // Auto-open after 2 seconds (Desktop only)
     useEffect(() => {
         if (!hasOpenedAuto) {
-            const timer = setTimeout(() => {
-                setIsOpen(true);
-                setHasOpenedAuto(true);
-            }, 2000);
-            return () => clearTimeout(timer);
+            // Only auto-open if screen width is greater than 768px (Desktop/Tablet)
+            const isDesktop = window.innerWidth > 768;
+
+            if (isDesktop) {
+                const timer = setTimeout(() => {
+                    setIsOpen(true);
+                    setHasOpenedAuto(true);
+                }, 2000);
+                return () => clearTimeout(timer);
+            }
         }
     }, [hasOpenedAuto]);
 

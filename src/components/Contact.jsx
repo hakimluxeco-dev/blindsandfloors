@@ -29,16 +29,17 @@ const Contact = ({ onOpenMap }) => {
                         <div className="contact-item">
                             <FiMapPin className="contact-icon text-gold" />
                             <div>
-                                <div
+                                <button
                                     onClick={onOpenMap}
-                                    style={{ cursor: 'pointer' }}
+                                    style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'inherit', width: '100%' }}
                                     className="address-link"
+                                    aria-label="View on Google Maps"
                                 >
                                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                                         Visit Us <FiExternalLink size={16} style={{ color: 'var(--gold)' }} />
                                     </h4>
                                     <p>26 Crown Road, Johannesburg</p>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>

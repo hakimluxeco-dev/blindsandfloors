@@ -448,7 +448,8 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
-  z-index: 2000;
+  z-index: 3000;
+  /* Increased to be above everything including ChatBot */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -481,7 +482,8 @@ img {
   color: white;
   font-size: 2rem;
   cursor: pointer;
-  z-index: 2001;
+  z-index: 3001;
+  /* Above lightbox content */
   transition: color 0.2s;
 }
 
